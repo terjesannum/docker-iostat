@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: iostat
+  labels:
+    app: iostat
+spec:
+  selector:
+    matchLabels:
+      app: iostat
+  template:
+    metadata:
+      name: iostat
+      labels:
+        app: iostat
+    spec:
+      tolerations:
+      - operator: Exists
+      containers:
+      - name: iostat
+        image: terjesannum/iostat:1
+        imagePullPolicy: Always
