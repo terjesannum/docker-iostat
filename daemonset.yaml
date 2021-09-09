@@ -19,4 +19,4 @@ spec:
       containers:
       - name: iostat
         image: terjesannum/iostat:1
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
